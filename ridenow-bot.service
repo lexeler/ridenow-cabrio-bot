@@ -1,0 +1,15 @@
+[Unit]
+Description=RideNow Cabriolet Tracker Telegram bot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/ridenow-bot
+ExecStart=/usr/bin/python3 /opt/ridenow-bot/bot.py
+Restart=always
+RestartSec=5
+# BOT_TOKEN is read from /opt/ridenow-bot/.env by the program itself
+
+[Install]
+WantedBy=multi-user.target
